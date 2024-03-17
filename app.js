@@ -1,7 +1,7 @@
 
 if(process.env.NODE_ENV != "production"){
     require("dotenv").config();
-}
+};
 
 
 
@@ -26,15 +26,6 @@ const listingRoute = require("./routes/listing.js");
 const reviewRoute = require("./routes/review.js");
 const userRoute = require("./routes/user.js");
 
-/// ==== app.use section ==== ///
-app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"views"));
-app.use(express.urlencoded({extended:true}));
-app.use(methodOverrirde("_method"));
-app.engine("ejs",ejsMate);
-app.use(express.static(path.join(__dirname,"/public")));
-
-
 ///connecting function of mongoose with backend
 main().then(()=>{
     console.log("connected");
@@ -44,6 +35,17 @@ main().then(()=>{
 async function main(){
     await mongoose.connect(dbUrl);
 };
+
+/// ==== app.use section ==== ///
+app.set("view engine","ejs");
+app.set("views",path.join(__dirname,"views"));
+app.use(express.urlencoded({extended:true}));
+app.use(methodOverrirde("_method"));
+app.engine("ejs",ejsMate);
+app.use(express.static(path.join(__dirname,"/public")));
+
+
+
 
 const store = MongoStore.create({
     mongoUrl:dbUrl,
