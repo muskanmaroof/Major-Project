@@ -21,6 +21,7 @@ const LocalStrategy = require("passport-local");
 const User  = require("./models/user.js");
 const  dbUrl=process.env.ATLASDB_URL;
 
+
 ////// =====  models   ==== /////
 const listingRoute = require("./routes/listing.js");
 const reviewRoute = require("./routes/review.js");
@@ -123,6 +124,7 @@ app.use((err,req,res,next)=>{
 app.listen(8080,()=>{
     console.log("app is listening on port on 8080");
 });
+
 
 // app.get("/register",async(req,res)=>{
 //     let fakeUser = new User ({

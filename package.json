@@ -5,11 +5,11 @@
   "name": "major-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "build":"npm install -force --legacy-peer-eps"
+    "build": "npm install -force --legacy-peer-eps",
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,8 @@
     "ejs-mate": "^4.0.0",
     "express": "^4.18.2",
     "express-session": "^1.18.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^4.9.0",
     "joi": "^17.12.2",
     "method-override": "^3.0.0",
     "mongoose": "^8.2.0",
